@@ -1,0 +1,20 @@
+//PUT /_template/cpnr
+//{    
+    "template": "cpnr-*",
+    "settings": {
+        "number_of_shards" : 1
+    },
+    "mappings": {
+        "_default_": {
+     //       "_source": {"enabled":false},
+            "properties":{
+                "@timestamp" : {"type" : "date", "index" : "true"},
+                "IP_address" : {"type" : "ip"}, 
+                "duid" : {"type" : "string", "index" : "true"},
+                "message1" : {"type" : "keyword"},
+                "packet_type" : {"type" : "keyword"},
+                "status" : {"type" : "keyword"}
+            }
+        }
+    }
+//}
