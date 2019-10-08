@@ -1,4 +1,4 @@
-# ELK-CPNR
+# ELK-Stack
 Log Analysis using ELK stack for Cisco Prime Network Registrar
 
 Files to be installed on the ELK Cluster (MAC OSX)
