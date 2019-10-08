@@ -1,0 +1,38 @@
+##### Run these in Kibana Dev Tools #####
+
+POST _xpack/security/role/logstash_writer
+{
+  "cluster": ["manage_index_templates", "monitor"],
+  "indices": [
+    {
+      "names": [ "vcom-*" ], 
+      "privileges": ["write","delete","create_index"]
+    }
+  ]
+}
+
+GET _xpack/security/role/logstash_writer
+
+POST _xpack/security/user/logstash_internal
+{
+  "password" : "changeme",
+  "roles" : [ "logstash_writer"],
+  "full_name" : "Internal Logstash User"
+}
+
+POST _xpack/security/role/logstash_reader
+{
+  "indices": [
+    {
+      "names": [ "vcom-*" ], 
+      "privileges": ["read","view_index_metadata"]
+    }
+  ]
+}
+
+POST _xpack/security/user/logstash_user
+{
+  "password" : "changeme",
+  "roles" : [ "logstash_reader"],
+  "full_name" : "Kibana User"
+}
