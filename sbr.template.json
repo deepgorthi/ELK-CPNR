@@ -1,0 +1,18 @@
+//PUT /_template/sbr
+//{
+	"template": "sbr-*",
+	"settings": {
+	    "number_of_shards" : 1
+	},
+	"mappings": {
+	    "_default_": {
+	 //       "_source": {"enabled":false},
+	        "properties":{
+	            "@timestamp" : {"type" : "date"},
+	            "Session_ID" : {"type" : "keyword"},
+	            "Thread_ID" : {"type" : "short"},
+	            "lOG_Message" : {"type" : "text"}
+	        	}
+	        }
+	    }
+//}
