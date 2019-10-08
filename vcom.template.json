@@ -1,0 +1,18 @@
+//PUT _template/vcom
+//{
+    "template": "vcom-*",
+    "settings": {
+        "number_of_shards" : 1
+    },
+    "mappings": {
+        "_default_": {
+            "properties":{
+                "@timestamp" : {"type" : "date", "index" : "true"},
+                "Message_type" : {"type" : "keyword"},
+                "Source" : {"type" : "keyword"},
+                "Method" : {"type" : "keyword"},
+                "Log_Message" : {"type" : "keyword"}
+            }
+        }
+    }
+//}
